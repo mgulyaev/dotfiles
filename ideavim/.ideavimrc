@@ -1,0 +1,25 @@
+
+" Note: it seems like ideavim does not support :update command, that's why :w here
+nnoremap <C-s> :w<CR>
+inoremap <C-s> <Esc>:w<CR>
+vnoremap <C-s> <Esc>:w<CR>
+
+nnoremap ; :
+
+" Note: Use :actionlist command in ideavim to see all the actions
+
+nnoremap <C-h> :action PreviousTab<CR>
+nnoremap <C-l> :action NextTab<CR>
+
+nnoremap <C-p> :action GotoFile<CR>
+
+nnoremap <A-o> :action GotoRelated<CR>
+
+nnoremap <leader>o :action GotoAction<CR>
+nnoremap <leader>r :action GotoSymbol<CR>
+
+nnoremap <A-j> :action MoveStatementDown<CR>
+nnoremap <A-k> :action MoveStatementUp<CR>
+
+set ignorecase
+set smartcase
