@@ -185,8 +185,8 @@ colors:
     yellow:  '0xde935f'
     blue:    '0x5f819d'
     magenta: '0x85678f'
-    cyan:    '0x70c0ba'
-    white:   '0x5e8d87'
+    cyan:    '0x5e8d87'
+    white:   '0x6c7a80'
 
   # Bright colors
   bright:
