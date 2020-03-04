@@ -1,10 +1,10 @@
-
 " Note: it seems like ideavim does not support :update command, that's why :w here
 nnoremap <C-s> :w<CR>
 inoremap <C-s> <Esc>:w<CR>
 vnoremap <C-s> <Esc>:w<CR>
 
 nnoremap ; :
+let mapleader = "\"
 
 " Note: Use :actionlist command in ideavim to see all the actions
 
@@ -20,6 +20,9 @@ nnoremap <leader>r :action GotoSymbol<CR>
 
 nnoremap <A-j> :action MoveStatementDown<CR>
 nnoremap <A-k> :action MoveStatementUp<CR>
+
+nnoremap <leader>c<Space> :action CommentByLineComment<CR>
+vnoremap <leader>c<Space> :action CommentByLineComment<CR>
 
 set ignorecase
 set smartcase
