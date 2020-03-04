@@ -13,7 +13,7 @@ nnoremap <C-l> :action NextTab<CR>
 
 nnoremap <C-p> :action GotoFile<CR>
 
-nnoremap <A-o> :action GotoRelated<CR>
+nnoremap <A-o> :action CIDR.Lang.SwitchHeaderSource<CR>
 
 nnoremap <leader>o :action GotoAction<CR>
 nnoremap <leader>r :action GotoSymbol<CR>
