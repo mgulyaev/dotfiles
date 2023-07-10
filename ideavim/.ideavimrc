@@ -26,3 +26,4 @@ vnoremap <leader>c<Space> :action CommentByLineComment<CR>
 
 set ignorecase
 set smartcase
+set ideajoin
