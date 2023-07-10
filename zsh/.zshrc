@@ -1,33 +1,31 @@
-# if [[ ! -d ~/.zplug ]]; then
-#    curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+# using https://github.com/agkozak/zcomet
+# Clone zcomet if necessary
+# if [[ ! -f ${ZDOTDIR:-${HOME}}/.zcomet/bin/zcomet.zsh ]]; then
+#   git clone https://github.com/agkozak/zcomet.git ${ZDOTDIR:-${HOME}}/.zcomet/bin
 # fi
 
+# Source zcomet.zsh
+source ${ZDOTDIR:-${HOME}}/.zcomet/bin/zcomet.zsh
+# zcomet load 'mafredri/zsh-async'
+zcomet load 'sindresorhus/pure'
+
+# zcomet load ohmyzsh "plugins/compleat"
+# zcomet load ohmyzsh "lib/completion"
+zcomet snippet OMZ::lib/completion.zsh
+zcomet load ohmyzsh plugins/compleat
+
+zcomet load "zsh-users/zsh-syntax-highlighting"
+zcomet load "zsh-users/zsh-history-substring-search"
+
+# zplug check || zplug install
+zcomet compinit
+
+
 fpath=(~/completions $fpath)
-source ~/.zplug/init.zsh
 
 HISTFILE=~/.zsh_history
 HISTSIZE=100000
 SAVEHIST=100000
-
-# zplug "themes/clean", from:oh-my-zsh
-
-zplug 'mafredri/zsh-async'
-zplug 'sindresorhus/pure', use:pure.zsh, as:theme
-
-zplug "plugins/compleat", from:oh-my-zsh
-zplug "lib/completion", from:oh-my-zsh
-zplug 'zplug/zplug', hook-build:'zplug --self-manage'
-
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
-zplug "zsh-users/zsh-history-substring-search", defer:3
-
-zplug check || zplug install
-
-if [ -f "$_zplug_lock" ]; then
-    rm "$_zplug_lock"
-fi
-
-zplug load
 
 stty start undef
 stty stop undef
@@ -103,3 +101,4 @@ bindkey "\e[Z" reverse-menu-complete # Shift+Tab
 export TERMINAL=gnome-terminal
 export EDITOR=vim
 export BAT_THEME=TwoDark
+export PATH="/opt/homebrew/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/mark/Library/Application Support/JetBrains/Toolbox/scripts:/Users/mark/.fzf/bin"
