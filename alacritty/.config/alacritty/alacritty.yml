@@ -60,7 +60,7 @@ window:
   #
   # Values for `startup_mode` (macOS only):
   #   - SimpleFullscreen
-  startup_mode: Fullscreen
+  startup_mode: Maximized
 
   # Window title
   #title: Alacritty
@@ -78,10 +78,10 @@ window:
   # Set this to `None` to use the default theme variant.
   #gtk_theme_variant: None
 
-#scrolling:
+scrolling:
   # Maximum number of lines in the scrollback buffer.
   # Specifying '0' will disable scrolling.
-  #history: 10000
+  history: 10000
 
   # Number of lines the viewport will move for every line scrolled when
   # scrollback is enabled (history > 0).
@@ -102,7 +102,8 @@ window:
 # Font configuration
 font:
   # Normal (roman) font face
-  #normal:
+  normal:
+    family: "Meslo LG S DZ for Powerline"
     # Font family
     #
     # Default:
@@ -529,8 +530,9 @@ colors:
 # Bindings are always filled by default, but will be replaced when a new
 # binding with the same triggers is defined. To unset a default binding, it can
 # be mapped to the `ReceiveChar` action. Alternatively, you can use `None` for
-# a no-op if you do not wish to receive input characters for that binding.
-#key_bindings:
+# - a no-op if you do not wish to receive input characters for that binding.
+key_bindings:
+  - { key: F11, action: ToggleFullscreen }
   # (Windows/Linux only)
   #- { key: V,        mods: Control|Shift, action: Paste            }
   #- { key: C,        mods: Control|Shift, action: Copy             }
