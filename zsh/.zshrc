@@ -1,33 +1,33 @@
-# if [[ ! -d ~/.zplug ]]; then
-#    curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+# if [[ ! -d ~/.zcomet load ]]; then
+#    curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zcomet load/installer/master/installer.zsh | zsh
+# fi
+
+# Clone zcomet if necessary
+# if [[ ! -f ${ZDOTDIR:-${HOME}}/.zcomet/bin/zcomet.zsh ]]; then
+#   command git clone https://github.com/agkozak/zcomet.git ${ZDOTDIR:-${HOME}}/.zcomet/bin
 # fi
 
 fpath=(~/completions $fpath)
-source ~/.zplug/init.zsh
+source ${ZDOTDIR:-${HOME}}/.zcomet/bin/zcomet.zsh
 
 HISTFILE=~/.zsh_history
 HISTSIZE=100000
 SAVEHIST=100000
 
-# zplug "themes/clean", from:oh-my-zsh
+# zcomet load "themes/clean", from:oh-my-zsh
 
-zplug 'mafredri/zsh-async'
-zplug 'sindresorhus/pure', use:pure.zsh, as:theme
+zcomet load 'mafredri/zsh-async'
+zcomet load 'sindresorhus/pure'
 
-zplug "plugins/compleat", from:oh-my-zsh
-zplug "lib/completion", from:oh-my-zsh
-zplug 'zplug/zplug', hook-build:'zplug --self-manage'
+# zcomet load "plugins/compleat", from:oh-my-zsh
+# zcomet load "lib/completion", from:oh-my-zsh
+zcomet snippet https://github.com/ohmyzsh/ohmyzsh/blob/master/lib/completion.zsh
+zcomet snippet https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/compleat/compleat.plugin.zsh
 
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
-zplug "zsh-users/zsh-history-substring-search", defer:3
+zcomet load "zsh-users/zsh-syntax-highlighting"
+zcomet load "zsh-users/zsh-history-substring-search"
 
-zplug check || zplug install
-
-if [ -f "$_zplug_lock" ]; then
-    rm "$_zplug_lock"
-fi
-
-zplug load
+zcomet compinit
 
 stty start undef
 stty stop undef
@@ -48,7 +48,7 @@ alias svndiff=~/.svndiff.sh
 alias svnvdiff='svn diff --diff-cmd=svndiff_helper'
 alias grep='grep --color'
 # alias open=xdg-open
-alias ls='gls --color=auto'
+alias ls='ls --color=auto'
 
 alias lsregister=/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Versions/Current/Support/lsregister
 
@@ -57,6 +57,8 @@ zstyle ':completion:*' menu select
 bindkey -e
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
 
 export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='bg=none,fg=bold'
 export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND='bg=none'
