@@ -10,8 +10,6 @@ HISTFILE=~/.zsh_history
 HISTSIZE=100000
 SAVEHIST=100000
 
-# zcomet load "themes/clean", from:oh-my-zsh
-
 zcomet load 'mafredri/zsh-async'
 zcomet load 'sindresorhus/pure'
 
@@ -101,3 +99,4 @@ bindkey "\e[Z" reverse-menu-complete # Shift+Tab
 export TERMINAL=gnome-terminal
 export EDITOR=vim
 export BAT_THEME=TwoDark
+export PATH="/opt/homebrew/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/mark/Library/Application Support/JetBrains/Toolbox/scripts:/Users/mark/.fzf/bin"
