@@ -1,7 +1,3 @@
-# if [[ ! -d ~/.zcomet load ]]; then
-#    curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zcomet load/installer/master/installer.zsh | zsh
-# fi
-
 # Clone zcomet if necessary
 # if [[ ! -f ${ZDOTDIR:-${HOME}}/.zcomet/bin/zcomet.zsh ]]; then
 #   command git clone https://github.com/agkozak/zcomet.git ${ZDOTDIR:-${HOME}}/.zcomet/bin
